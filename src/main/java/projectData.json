@@ -1,0 +1,18 @@
+{
+  "patient1": {
+    "name": "Marian Marczak",
+    "sugarLevel": 100
+  },
+  "patient2": {
+    "name": "Jan Kowalski",
+    "sugarLevel": 410
+  },
+  "patient3": {
+    "name": "Anita Bal",
+    "sugarLevel": 29
+  },
+  "patient4": {
+    "name": "Anna Nowak",
+    "sugarLevel": 500
+  }
+}

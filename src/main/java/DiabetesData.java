@@ -1,6 +1,9 @@
+import java.util.List;
 
+/**
+ * Interface with methods of writing and reading data.
+ */
 public interface DiabetesData {
-    // Metody do zapisu i odczytu danych
-    void saveData(Diabetic diabetic);
-    Diabetic readData();
+    List<Diabetic> readData() throws DiabetesDataException;
+    void writeData(List<Diabetic> diabeticList) throws DiabetesDataException;
 }

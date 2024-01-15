@@ -1,15 +1,15 @@
-import org.json.JSONObject;
-
 /**
  * Class representing sugar level of diabetic.
  */
 public class Diabetic {
     private String name;
     private int sugarLevel;
+    private SugarLevelStatus status;
 
     public Diabetic(String name, int sugarLevel) {
         this.name = name;
-        this.sugarLevel = sugarLevel;
+        this.sugarLevel = Math.max(0, sugarLevel);
+        this.status = SugarLevelStatus.UNKNOWN;
     }
 
     public void setName(String name) {
@@ -28,15 +28,11 @@ public class Diabetic {
         return sugarLevel;
     }
 
-    public JSONObject toJSON() {
-        JSONObject jsonDiabetic = new JSONObject();
-        jsonDiabetic.put("name", this.name);
-        jsonDiabetic.put("sugarLevel", this.sugarLevel);
-        return jsonDiabetic;
+    public void setStatus(SugarLevelStatus status) {
+        this.status = status;
     }
 
-    public void fromJSON(JSONObject jsonDiabetic) {
-        this.name = jsonDiabetic.getString("name");
-        this.sugarLevel = jsonDiabetic.getInt("sugarLevel");
+    public SugarLevelStatus getStatus() {
+        return status;
     }
 }
