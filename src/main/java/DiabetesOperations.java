@@ -1,11 +1,10 @@
+import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class responsible for operations on diabeticList  and diabetics.
+ */
 public class DiabetesOperations {
-    private DiabetesDataJSON diabetesDataJSON;
-
-    public DiabetesOperations(DiabetesDataJSON diabetesDataJSON) {
-        this.diabetesDataJSON = diabetesDataJSON;
-    }
 
     public static void updateSugarLevelStatus(Diabetic diabetic) {
         int sugarLevel = diabetic.getSugarLevel();
@@ -47,12 +46,4 @@ public class DiabetesOperations {
                 .forEach(System.out::println);
     }
 
-    public static void saveData(List<Diabetic> diabeticList, DiabetesDataJSON diabetesDataJSON) throws DiabetesDataException {
-        if (diabetesDataJSON != null) {
-            diabetesDataJSON.writeData(diabeticList);
-            System.out.println("Data saved to file.");
-        } else {
-            System.err.println("DiabetesDataJSON is null. Unable to save data.");
-        }
-    }
 }
