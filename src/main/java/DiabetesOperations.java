@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,7 +8,7 @@ import java.util.List;
  */
 public class DiabetesOperations {
 
-    public static void updateSugarLevelStatus(Diabetic diabetic) {
+    public static void updateSugarLevelStatus(@NotNull Diabetic diabetic) {
         int sugarLevel = diabetic.getSugarLevel();
         if (sugarLevel > 400) {
             diabetic.setStatus(SugarLevelStatus.TOO_HIGH);
@@ -18,7 +20,7 @@ public class DiabetesOperations {
     }
 
 
-    public static void showAllDiabetics(List<Diabetic> diabeticList) {
+    public static void showAllDiabetics(@NotNull List<Diabetic> diabeticList) {
         System.out.println("Details of all diabetics:");
 
         diabeticList.forEach(diabetic -> {
@@ -28,7 +30,7 @@ public class DiabetesOperations {
         });
     }
 
-    public static void showHighSugarLevelNames(List<Diabetic> diabeticList) {
+    public static void showHighSugarLevelNames(@NotNull List<Diabetic> diabeticList) {
         System.out.println("Names of people with high sugar level:");
 
         diabeticList.stream()
@@ -37,7 +39,7 @@ public class DiabetesOperations {
                 .forEach(System.out::println);
     }
 
-    public static void showLowSugarLevelNames(List<Diabetic> diabeticList) {
+    public static void showLowSugarLevelNames(@NotNull List<Diabetic> diabeticList) {
         System.out.println("Names of people with too low sugar level:");
 
         diabeticList.stream()

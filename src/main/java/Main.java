@@ -1,11 +1,16 @@
 import java.util.List;
+import java.util.Scanner;
 
+/**
+ * Class Main demonstrates whole project funcionality.
+ */
 public class Main {
     public static void main(String[] args) {
-        // Specify the path to your JSON file
-        String jsonFilePath = "C:\\Users\\Jakub\\IdeaProjects\\DiabetesProject\\src\\main\\java\\projectData.json";
+        // Use Scanner to get the path from the user
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the path to the JSON file: ");
+        String jsonFilePath = scanner.nextLine();
 
-        // Create an instance of ReadJSON
         ReadJSON readJSON = new ReadJSON(jsonFilePath);
 
         try {
@@ -27,6 +32,8 @@ public class Main {
         } catch (DiabetesDataException e) {
             // Handle exception appropriately
             e.printStackTrace();
+        } finally {
+            scanner.close();
         }
     }
 }

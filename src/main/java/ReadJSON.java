@@ -8,6 +8,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class ReadJSON is responsible for handling JSON file as a data input.
+ */
 public class ReadJSON {
     private final String fileName;
 
@@ -15,6 +18,11 @@ public class ReadJSON {
         this.fileName = fileName;
     }
 
+    /**
+     * Method readData is responsible for reading data from JSON and creating ArrayList with objects of Diabetic class.
+     * @return diabeticList list of objects representing every diabetic in our data
+     * @throws DiabetesDataException
+     */
     public List<Diabetic> readData() throws DiabetesDataException {
         try {
             String jsonString = new String(Files.readAllBytes(Paths.get(fileName)));
