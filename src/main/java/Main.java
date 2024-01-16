@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -26,11 +27,19 @@ public class Main {
 
                 // Show names of diabetics with too low sugar level
                 DiabetesOperations.showLowSugarLevelNames(diabeticList);
+
+                // Prompt the user for the new file name
+                System.out.println("Enter the path for the new JSON file: ");
+                String newJsonFilePath = scanner.nextLine();
+
+                // Write data to the new JSON file with updated status
+                WriteJSON writeJSON = new WriteJSON(jsonFilePath);
+                writeJSON.writeData(diabeticList, newJsonFilePath);
             } else {
                 System.out.println("Diabetic list is null.");
             }
         } catch (DiabetesDataException e) {
-            // Handle exception appropriately
+            // in progress...
             e.printStackTrace();
         } finally {
             scanner.close();
