@@ -1,6 +1,13 @@
 # DiabatesProject służy do odczytu, operacji na danych oraz zapisywaniu ich do pliku w formacie JSON.
-# Projekt został wykonane samodzielnie przez Jakuba Wójciaka w ramach kursu Zaawansowane Programowanie Obiektowe 1.
-Poniżej opiszę funkcjonalność klas zawartych w projekcie.
+Projekt został wykonane samodzielnie przez Jakuba Wójciaka w ramach kursu Zaawansowane Programowanie Obiektowe 1.
+# Zasada działania programu.
+1. Należy uruchomić klasę Main.java.
+2. Konsola powinna poprosić użytkownika o wprowadzenie ścieżki do pliku JSON z którego chcemy pobrać dane.
+   Przykładowy plik jest załączony wraz z projektem w folderze src/main/java/projectData.json.
+3. Program powinien wyświetlić w konsoli dane pacjentów oraz osoby ze zbyt wysokim oraz zbyt niskim poziomem cukru.
+4. Program poprosi użytkownika o podanie ścieżki do liku w którym mają zostać zapisane dane wyjściowe, zawierające ocene poziomu cukru.
+5. Działaniue programu się zakończy, a w podanym przez nas pliku powinny zostać zapisane dane.
+#Poniżej opiszę funkcjonalność klas zawartych w projekcie.
 ## Diabetic.java class
 Klasa Diabetic służy jako obiektowa reprezentacja cukrzyka. 
 Pola przechowują podstawowe informacje jakie mogą opisywać dany obiekt, czyli:
