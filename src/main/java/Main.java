@@ -1,11 +1,15 @@
-import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 /**
- * Class Main demonstrates whole project funcionality.
+ * Class Main demonstrates the functionality of the entire project.
  */
 public class Main {
+    /**
+     * Main method to execute the project.
+     *
+     * @param args Arguments.
+     */
     public static void main(String[] args) {
         // Use Scanner to get the path from the user
         Scanner scanner = new Scanner(System.in);
@@ -39,8 +43,7 @@ public class Main {
                 System.out.println("Diabetic list is null.");
             }
         } catch (DiabetesDataException e) {
-            // in progress...
-            e.printStackTrace();
+            System.out.println("File contains wrong data!");
         } finally {
             scanner.close();
         }

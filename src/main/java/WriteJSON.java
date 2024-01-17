@@ -19,9 +19,10 @@ public class WriteJSON {
 
     /**
      * Class responsible for writing data into JSON file with updated status of sugar level.
-     * @param diabeticList list of diabetics as objects
-     * @param newFileName path of the file which will save output data
-     * @throws DiabetesDataException
+     *
+     * @param diabeticList List of diabetics as objects.
+     * @param newFileName Path of the file which will save output data.
+     * @throws DiabetesDataException If there is an error writing the JSON data.
      */
     public void writeData(@NotNull List<Diabetic> diabeticList, String newFileName) throws DiabetesDataException {
         try {
@@ -39,10 +40,14 @@ public class WriteJSON {
             try (FileWriter fileWriter = new FileWriter(newFileName)) {
                 fileWriter.write(jsonArray.toString());
             } catch (IOException e) {
-                throw new DiabetesDataException("Error writing JSON data", e);
+                throw new DiabetesDataException("Error writing JSON data");
             }
         } catch (JSONException e) {
-            throw new DiabetesDataException("Error creating JSON object", e);
+            throw new DiabetesDataException("Error creating JSON object");
         }
+    }
+
+    public String getFileName() {
+        return fileName;
     }
 }

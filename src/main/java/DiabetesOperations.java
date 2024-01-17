@@ -3,10 +3,15 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 /**
- * Class responsible for operations on diabeticList  and diabetics.
+ * Class responsible for operations on diabeticList and diabetics.
  */
 public class DiabetesOperations {
 
+    /**
+     * Update the sugar level status of a diabetic individual.
+     *
+     * @param diabetic The diabetic.
+     */
     public static void updateSugarLevelStatus(@NotNull Diabetic diabetic) {
         int sugarLevel = diabetic.getSugarLevel();
         if (sugarLevel > 400) {

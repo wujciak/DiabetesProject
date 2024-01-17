@@ -13,6 +13,11 @@ public enum SugarLevelStatus {
         this.status = status;
     }
 
+    /**
+     * Get the string representation of the SugarLevelStatus.
+     *
+     * @return The status as a String.
+     */
     public String getStatus() {
         return status;
     }

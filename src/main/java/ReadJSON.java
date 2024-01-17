@@ -20,8 +20,9 @@ public class ReadJSON {
 
     /**
      * Method readData is responsible for reading data from JSON and creating ArrayList with objects of Diabetic class.
-     * @return diabeticList list of objects representing every diabetic in our data
-     * @throws DiabetesDataException
+     *
+     * @return A list of objects representing every diabetic in our data.
+     * @throws DiabetesDataException If there is an error reading the JSON data.
      */
     public List<Diabetic> readData() throws DiabetesDataException {
         try {
@@ -42,7 +43,7 @@ public class ReadJSON {
 
             return diabeticList;
         } catch (IOException | JSONException e) {
-            throw new DiabetesDataException("Error reading JSON data", e);
+            throw new DiabetesDataException("Error reading JSON data");
         }
     }
 }

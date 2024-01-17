@@ -6,9 +6,19 @@ public class Diabetic {
     private int sugarLevel;
     private SugarLevelStatus status;
 
-    public Diabetic(String name, int sugarLevel) {
+    /**
+     * Constructor for Diabetic class.
+     *
+     * @param name The name of the diabetic.
+     * @param sugarLevel The sugar level of the diabetic.
+     * @throws DiabetesDataException If sugarLevel is negative.
+     */
+    public Diabetic(String name, int sugarLevel) throws DiabetesDataException {
+        if (sugarLevel <= 0) {
+            throw new DiabetesDataException("Sugar level must be positive number!");
+        }
         this.name = name;
-        this.sugarLevel = Math.max(0, sugarLevel);
+        this.sugarLevel = sugarLevel;
         this.status = SugarLevelStatus.UNKNOWN;
     }
 
