@@ -1,44 +1,25 @@
-# DiabatesProject służy do odczytu, operacji na danych oraz zapisywaniu ich do pliku w formacie JSON.
-Projekt został wykonane samodzielnie przez Jakuba Wójciaka w ramach kursu Zaawansowane Programowanie Obiektowe 1.
-# Zasada działania programu.
-1. Należy uruchomić klasę Main.java.
-2. Konsola powinna poprosić użytkownika o wprowadzenie ścieżki do pliku JSON z którego chcemy pobrać dane.
-   Przykładowy plik jest załączony wraz z projektem w folderze src/main/java/projectData.json.
-3. Program powinien wyświetlić w konsoli dane pacjentów oraz osoby ze zbyt wysokim oraz zbyt niskim poziomem cukru.
-4. Program poprosi użytkownika o podanie ścieżki do liku w którym mają zostać zapisane dane wyjściowe, zawierające ocene poziomu cukru.
-5. Działaniue programu się zakończy, a w podanym przez nas pliku powinny zostać zapisane dane.
-#Poniżej opiszę funkcjonalność klas zawartych w projekcie.
+# TheDiabatesProject is used for reading, data manipulation, and saving them to a JSON file format. The project was independently developed by Jakub Wójciak as part of the Advanced Object-Oriented Programming 1 course.
+
+# Program Operation Principle.
+1. Run the Main.java class.
+2. The console will prompt the user to enter the path to the JSON file from which we want to retrieve data. An example file is included with the project in the src/main/java/projectData.json folder.
+3. The program should display patient data and individuals with either high or low blood sugar levels in the console.
+4. The program will ask the user to provide the path to the file where the output data containing blood sugar level assessments should be saved.
+5. The program will conclude its operations, and the provided file should contain the saved data.
+# Below, I'll describe the functionality of the classes included in the project.
 ## Diabetic.java class
-Klasa Diabetic służy jako obiektowa reprezentacja cukrzyka. 
-Pola przechowują podstawowe informacje jakie mogą opisywać dany obiekt, czyli:
-imię i nazwisko cukrzyka,
-poziom cukru,
-ocena poziomu cukru.
-Klasa zawiera konstruktor oraz getter i settery dla każdego pola.
+The Diabetic class serves as an object representation of a diabetic individual. Its fields store basic information describing the object, including the individual's name, blood sugar level, and blood sugar level assessment. The class includes a constructor and getters and setters for each field.
 ## SugarLevelStatus.java class
-Klasa SugarLevelStatus jest typem ENUM przechowującym 4 wartości repreentujące ocene poziomu cukru.
-Przy odczycie danych poziom cukru jest nieznany,
-natomiast wraz z działanem programu ocena poziomu cukru jest przypisywana do każdego cukrzyka.
+The SugarLevelStatus class is an ENUM type storing 4 values representing blood sugar level assessments. When reading data, the blood sugar level is initially unknown, but as the program runs, a blood sugar level assessment is assigned to each diabetic individual.
 ## DiabetesDataException.java class
-Klasa DiabetesDataException jest klasą reprezetującą własny wyjątek.
+The DiabetesDataException class represents a custom exception.
 ## ReadJSON.java class
-Klasa ReadJSON ma za zadanie odczytać dane zawarte w pliku typu JSON,
-a następnie zapisać je w liście (List<Diabetic> diabeticList) obiektów reprezentowanych przez klasę Diabetic.
-Klasa zawiera funkcję readData która zwraca listę cukrzyków.
-Metoda readData zawiera kontrolę wyjątków dla DiabetesDataException, IOException oraz JSONException.
+The ReadJSON class is responsible for reading data from a JSON file and then saving it in a list (List<Diabetic>) of objects represented by the Diabetic class. The class includes a readData function that returns a list of diabetics. The readData method handles exceptions for DiabetesDataException, IOException, and JSONException.
 ## DiabetesOperations.java class
-Klasa DiabetesOperations ma za zadanie analizować poziom cukru cukrzyka oraz wyświetlanie w konsoli odpowiednich informacji.
-Zawiera ona metodę updateSugarLevelStatus, która przyjmuje listę cukrzyków i analizuje,
-a następnie przypisuje im odpowiednią wartość typu ENUM w zależności od ich poziomu cukru.
-Kolejną metodą jest showAllDiabetics, która przyjmuje listę cukrzyków i wyświetla w konsoli informację o nich wraz z oceną poziomu cukru.
-Klasa zawiera także metody showHighSugarLevelNames oraz showLowSugarLevelNames,
-które przyjmują listę cukrzyków wyświetlając imiona i nazwiska osób z zbyt wysokim lub zbyt niskim poziomem cukru.
+The DiabetesOperations class is responsible for analyzing a diabetic individual's blood sugar level and displaying appropriate information in the console. It includes the updateSugarLevelStatus method, which takes a list of diabetics, analyzes them, and then assigns them an appropriate ENUM value based on their blood sugar level. Another method, showAllDiabetics, takes a list of diabetics and displays information about them in the console along with their blood sugar level assessment. The class also includes methods showHighSugarLevelNames and showLowSugarLevelNames, which take a list of diabetics and display the names of individuals with either high or low blood sugar levels.
 ## WriteJSON.java class
-Klasa WriteJSON ma na celu pobranie zmodyfikowanej już listy cukrzyków i zapisanie danych z tej listy w pliku o formacie JSON.
-Dane zapisywane są w nowym pliku. 
-Metoda writeData obsługuje wyjątki DiabetesDataException oraz JSONException.
+The WriteJSON class aims to retrieve the modified list of diabetics and save the data from this list to a JSON format file. The data is saved in a new file. The writeData method handles exceptions for DiabetesDataException and JSONException.
 ## Main.java class
-Klasa prezentująca działanie projektu. Klasa poprosi użytkownika o podanie ścieżki pliku JSON z jakiego chce odczytać dane.
-Po wykonaniu odpowiednich działań program ponownie poprosi o ścieżkę pliku w którym chcemy zapisać nasze dane wyjściowe.
-## Metody testujące
-Projekt zawiera testy dla dwóch klas: DiabeticTest oraz DiabetesOperationsTest.
+This class demonstrates the project's functionality. It prompts the user to enter the path to the JSON file from which they want to read data. After performing the necessary actions, the program will again ask for the path to the file where we want to save our output data.
+## Testing Methods
+The project includes tests for two classes: DiabeticTest and DiabetesOperationsTest.
